@@ -89,6 +89,9 @@ function tablazat() {
 
 function torles(i) {
   console.log(KUTYALISTA[i]);
+  //let gomb = event.target
+  //let szulo = gomb.parentElement
+  //szulo.remove
   KUTYALISTA.splice(i);
   console.log(KUTYALISTA[i]);
 }
