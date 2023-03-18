@@ -17,6 +17,7 @@ function init() {
   });
 }
 
+
 function kutya(LISTA, ARTICLE) {
   ARTICLE.innerHTML += LISTA[2];
 }
