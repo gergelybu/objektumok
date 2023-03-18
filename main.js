@@ -72,10 +72,11 @@ function osszeAllit() {
 }
 
 function tablazat() {
-  let txt = "<table>";
+  let txt = "<table><tr>";
   for (const key in KUTYALISTA[0]) {
     txt += `<th>${key}</th>`;
   }
+  txt += "</tr>";
   for (let index = 0; index < KUTYALISTA.length; index++) {
     txt += "<tr>";
     for (const key in KUTYALISTA[index]) {
