@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+article div{
+    border: 1px solid black;
+    width: 250px;
+    padding: 10px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border: 1px solid black;
+    
+}
+
+table td{
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+}
+
+table th{
+    border: 1px solid black;
+    background-color:aquamarine;
+    height: 30px;
+}
