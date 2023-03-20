@@ -32,30 +32,12 @@ const KUTYALISTA = [
 ];
 
 function init() {
-  const ARTICLE = document.querySelector("article");
-  const MAIN = document.querySelector("main");
+  generalas();
   const BEKULD = document.getElementById("bekuld");
   console.log(KUTYALISTA);
-  let txt = osszeAllit();
-  ARTICLE.innerHTML = txt;
-  txt = tablazat();
-  MAIN.innerHTML = txt;
-  const GOMB = document.getElementsByClassName("torles");
-  for (let index = 0; index < GOMB.length; index++) {
-    GOMB[index].addEventListener("click", function () {
-      torles(index);
-    });
-  }
   BEKULD.addEventListener("click", bekuldes);
-
-  /*GOMB.addEventListener("click", function () {
-    kutya(KUTYALISTA, ARTICLE);
-  })*/
 }
 
-/*function kutya(LISTA, ARTICLE) {
-  ARTICLE.innerHTML += LISTA[2];
-}*/
 
 function osszeAllit() {
   let txt = "";
@@ -65,11 +47,9 @@ function osszeAllit() {
       txt += `<p>
                      ${key}: ${KUTYALISTA[index][key]}
                  </p>`;
-      //console.log(KUTYALISTA[index][key])
     }
     txt += "<button class='torles'>Törlés</button></div>";
   }
-  //console.log(txt);
   return txt;
 }
 
@@ -93,7 +73,7 @@ function tablazat() {
 function torles(i) {
   console.log(i);
   KUTYALISTA.splice(i, 1);
-  ujragen();
+  generalas();
 }
 
 function bekuldes() {
@@ -117,11 +97,10 @@ function bekuldes() {
   BEVITEL["kor"] = parseInt(KOR.value);
   KUTYALISTA.push(BEVITEL);
   console.log(KUTYALISTA);
-  ujragen();
-  //meg kell vizsgálni, hogy URLAP kulcsai egyenlőek-e a kulccsal -> pusholja a lista megfelelő elemébe
+  generalas();
 }
 
-function ujragen() {
+function generalas() {
   const ARTICLE = document.querySelector("article");
   const MAIN = document.querySelector("main");
   let txt = osszeAllit();
