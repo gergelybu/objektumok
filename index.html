@@ -5,15 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Burai Gergely</title>
   </head>
   <body>
-    <article>
-      
-    </article>
-    <main>
-        
-    </main>
+    <article></article>
+    <aside><hr></aside>
+    <main></main>
+    <aside>
+      <hr>
+      <form action="" id="urlap">
+        <label for="nev">Neve:</label>
+        <input type="text" id="nev" name="nev" /><br />
+        <label for="fajta">Fajta:</label>
+        <input type="text" id="fajta" name="fajta" /><br /><br />
+        <label for="marmagassag">Marmagasság:</label>
+        <input
+          type="number"
+          id="marmagassag"
+          name="marmagassag"
+          min="20"
+          max="100"
+        /><br /><br />
+        <label for="kor">Kora:</label>
+        <input type="number" id="kor" name="kor" min="1" max="20" /><br /><br />
+        <input type="radio" id="kan" name="neme" value="kan" />
+        <label for="kan">kan</label><br />
+        <input type="radio" id="szuka" name="neme" value="szuka" checked/>
+        <label for="szuka">szuka</label><br /><br />
+        <button type="button" id="bekuld">Beküldés</button>
+      </form>
+    </aside>
   </body>
 </html>
