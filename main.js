@@ -89,7 +89,7 @@ function bekuldes() {
   BEVITEL["nev"] = NEV.value;
   BEVITEL["fajta"] = FAJTA.value;
   BEVITEL["marmagassag"] = parseInt(MARMAG.value);
-  if (KAN) {
+  if (KAN.checked) {
     BEVITEL["neme"] = "kan";
   } else {
     BEVITEL["neme"] = "szuka";
