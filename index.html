@@ -10,31 +10,44 @@
   </head>
   <body>
     <article></article>
-    <aside><hr></aside>
+    <aside><hr /></aside>
     <main></main>
     <aside>
-      <hr>
-      <form action="" id="urlap">
-        <label for="nev">Neve:</label>
-        <input type="text" id="nev" name="nev" /><br />
-        <label for="fajta">Fajta:</label>
-        <input type="text" id="fajta" name="fajta" /><br /><br />
-        <label for="marmagassag">Marmagasság:</label>
-        <input
-          type="number"
-          id="marmagassag"
-          name="marmagassag"
-          min="20"
-          max="100"
-        /><br /><br />
-        <label for="kor">Kora:</label>
-        <input type="number" id="kor" name="kor" min="1" max="20" /><br /><br />
-        <input type="radio" id="kan" name="neme" value="kan" />
-        <label for="kan">kan</label><br />
-        <input type="radio" id="szuka" name="neme" value="szuka" checked/>
-        <label for="szuka">szuka</label><br /><br />
-        <button type="button" id="bekuld">Beküldés</button>
-      </form>
+      <hr />
+      <div>
+        <form action="" id="urlap">
+          <label for="nev">Neve:</label>
+          <input type="text" id="nev" name="nev" />
+          <label for="fajta">Fajta:</label>
+          <input type="text" id="fajta" name="fajta" />
+          <label for="marmagassag">Marmagasság:</label>
+          <input
+            type="number"
+            id="marmagassag"
+            name="marmagassag"
+            min="20"
+            max="100"
+            value="20"
+          />
+          <label for="kor">Kora:</label>
+          <input
+            type="number"
+            id="kor"
+            name="kor"
+            min="1"
+            max="20"
+            value="1"
+          />
+          <fieldset>
+            <legend>Ivar</legend>
+            <input type="radio" id="kan" name="neme" value="kan" />
+            <label for="kan">kan</label><br />
+            <input type="radio" id="szuka" name="neme" value="szuka" checked />
+            <label for="szuka">szuka</label>
+          </fieldset>
+          <button type="button" id="bekuld">Beküldés</button>
+        </form>
+      </div>
     </aside>
   </body>
 </html>

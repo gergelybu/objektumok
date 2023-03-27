@@ -1,35 +1,8 @@
+import { KUTYAKULCS, KUTYALISTA } from "./lista.js";
+
 window.addEventListener("load", init);
 
-const KUTYALISTA = [
-  {
-    nev: "Dézi",
-    fajta: "keverék",
-    marmagassag: 52,
-    neme: "szuka",
-    kor: 13,
-  },
-  {
-    nev: "Kira",
-    fajta: "yorkshire terrier",
-    marmagassag: 20,
-    neme: "szuka",
-    kor: 13,
-  },
-  {
-    nev: "Doge",
-    fajta: "shiba inu",
-    marmagassag: 40,
-    neme: "kan",
-    kor: 5,
-  },
-  {
-    nev: "Kutya",
-    fajta: "golden retriever",
-    marmagassag: 60,
-    neme: "kan",
-    kor: 9,
-  },
-];
+let SORREND = 0;
 
 function init() {
   generalas();
@@ -38,23 +11,22 @@ function init() {
   BEKULD.addEventListener("click", bekuldes);
 }
 
-
 function osszeAllit() {
   let txt = "";
   for (let index = 0; index < KUTYALISTA.length; index++) {
-    txt += "<div>";
+    txt += `<div class="kartyak"><div class="features" id=${index}><ul>`;
     for (const key in KUTYALISTA[index]) {
-      txt += `<p>
+      txt += `<li><p>
                      ${key}: ${KUTYALISTA[index][key]}
-                 </p>`;
+                 </p></li>`;
     }
-    txt += "<button class='torles'>Törlés</button></div>";
+    txt += "</ul></div><button class='torles'>Törlés</button></div>";
   }
   return txt;
 }
 
 function tablazat() {
-  let txt = "<table><tr>";
+  let txt = "<div class='tablazat'><table><tr class='fejlec'>";
   for (const key in KUTYALISTA[0]) {
     txt += `<th>${key}</th>`;
   }
@@ -66,7 +38,7 @@ function tablazat() {
     }
     txt += "</tr>";
   }
-  txt += "</thead>";
+  txt += "</thead></table></div>";
   return txt;
 }
 
@@ -82,7 +54,6 @@ function bekuldes() {
   const FAJTA = document.getElementById("fajta");
   const MARMAG = document.getElementById("marmagassag");
   const KAN = document.getElementById("kan");
-  const SZUKA = document.getElementById("szuka");
   const KOR = document.getElementById("kor");
   const MAIN = document.querySelector("main");
   const BEVITEL = { nev: "", fajta: "", marmagassag: 0, neme: "", kor: 0 };
@@ -96,7 +67,6 @@ function bekuldes() {
   }
   BEVITEL["kor"] = parseInt(KOR.value);
   KUTYALISTA.push(BEVITEL);
-  console.log(KUTYALISTA);
   generalas();
 }
 
@@ -114,4 +84,30 @@ function generalas() {
       torles(index);
     });
   }
+  const FEJLEC = document.querySelectorAll("th");
+  console.log(FEJLEC);
+  for (let index = 0; index < FEJLEC.length; index++) {
+    FEJLEC[index].addEventListener("click", function () {
+      if (SORREND % 2 == 0) {
+        rendezBarmiSzerint(KUTYALISTA, `${FEJLEC[index].innerHTML}`, 1);
+      }else{
+        rendezBarmiSzerint(KUTYALISTA, `${FEJLEC[index].innerHTML}`, -1);
+      }
+      SORREND+=1;
+    });
+  }
+  return SORREND
+}
+
+function rendezBarmiSzerint(lista, kulcs, irany) {
+  lista.sort(function (a, b) {
+    let ertek = 1;
+    if (a[kulcs] < b[kulcs]) {
+      ertek = -1;
+    }
+    ertek *= irany;
+    return ertek;
+  });
+  console.log(lista);
+  generalas();
 }
