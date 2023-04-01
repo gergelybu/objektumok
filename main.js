@@ -1,6 +1,44 @@
-import { KUTYAKULCS, KUTYALISTA } from "./lista.js";
-
 window.addEventListener("load", init);
+
+const KUTYALISTA = [
+    {
+      nev: "Dézi",
+      fajta: "keverék",
+      marmagassag: 52,
+      neme: "szuka",
+      kor: 13,
+    },
+    {
+      nev: "Kira",
+      fajta: "yorkshire terrier",
+      marmagassag: 20,
+      neme: "szuka",
+      kor: 13,
+    },
+    {
+      nev: "Doge",
+      fajta: "shiba inu",
+      marmagassag: 40,
+      neme: "kan",
+      kor: 5,
+    },
+    {
+      nev: "Kutya",
+      fajta: "golden retriever",
+      marmagassag: 60,
+      neme: "kan",
+      kor: 9,
+    },
+  ];
+
+  const KUTYAKULCS = {
+    nev: "név",
+    kor: "kor",
+    fajta: "fajta",
+    lab: "láb",
+    nem: "ivar",
+    marmagasság: "marmagasság",
+  };
 
 let SORREND = 0;
 
